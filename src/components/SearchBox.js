@@ -13,11 +13,11 @@ const SearchBox = ({ searchChange, modeChange, mode }) => {
     return (
         <div>
             <input
-                style={{ marginBottom: 20 }}
                 className={'pa3 ba b--green bg-lightest-blue'}
                 type='search'
                 placeholder={name}
                 onChange={searchChange}
+                maxLength="20"
             />
             <button
                 className={theme}
