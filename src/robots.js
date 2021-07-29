@@ -1,4 +1,4 @@
-export const robots = [
+export const robotsData = [
     {
         name: 'WALL-E',
         email: 'wall_e@axiom.com'

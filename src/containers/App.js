@@ -1,73 +1,75 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import CardList from '../components/CardList';
 import AddRobot from '../components/AddRobot';
 import SearchBox from '../components/SearchBox';
-import { robots } from '../robots'
+import { robotsData } from '../robots'
 import './App.css';
 
-class App extends Component {
-    constructor() {
-        super();
-        this.state = {
-            inputBox: {},
-            robots: robots,
-            newBot: '',
-            searchfield: ''
+function App() {
+    const [inputBox, setInputBox] = useState({});
+    const robots = robotsData;
+    const [newBot, setNewBot] = useState('');
+    const [searchfield, setSearchfield] = useState('');
+    const [mode, setMode] = useState('');
+    const [title, setTitle] = useState('RoboFriends');
+    const [theme, setTheme] = useState('f-subheadline lh-title');
+
+    const onSearchChange = (event) => {
+        setSearchfield(event.target.value);
+    }
+
+    const onAddChange = (event) => {
+        setNewBot(event.target.value);
+        setInputBox(event);
+    }
+
+    const modeChange = () => {
+        if (title === 'RoboFriends') {
+            setMode('set_set2/');
+            setTitle('AlienFriends');
+            setTheme('f-subheadline lh-title yellow');
+        } else {
+            setMode('');
+            setTitle('RoboFriends');
+            setTheme('f-subheadline lh-title light-green');
         }
     }
 
-    onSearchChange = (event) => {
-        this.setState({ searchfield: event.target.value });
-    }
-
-    onAddChange = (event) => {
-        this.setState({ newBot: event.target.value });
-        this.state.inputBox = event;
-    }
-
-    addRobot = () => {
-        if (this.state.newBot !== '') {
-            this.state.robots.unshift({
-                name: this.state.newBot,
-                email: this.state.newBot.replace(/\s/g, "").toLowerCase() + '@robot.com'
+    const addRobot = () => {
+        if (newBot !== '') {
+            robots.unshift({
+                name: newBot,
+                email: newBot.replace(/\s/g, "").toLowerCase() + '@robot.com'
             });
-            this.setState({ newBot: '' });
-            this.state.inputBox.target.value = '';
+            setNewBot('');
+            inputBox.target.value = '';
         }
-
     }
 
-    /*componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response => response.json())
-            .then(users => this.setState({ robots: users })
-            );
-    }*/
+    const filteredRobots = robots.filter(robot => {
+        return robot.name.toLowerCase().includes(searchfield.toLowerCase());
+    });
 
-    render() {
-        const { robots, searchfield } = this.state;
-        const filteredRobots = robots.filter(robot => {
-            return robot.name.toLowerCase().includes(searchfield.toLowerCase());
-        });
 
-        if (!robots.length) {
-            return <h1>Loading...</h1>
-        }
-        else {
-            return (
-                <div className='tc'>
-                    <h1 className='f-subheadline lh-title' >RoboFriends</h1>
-                    <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
-                        <AddRobot addChange={this.onAddChange} addBot={this.addRobot} />
-                        <SearchBox searchChange={this.onSearchChange} />
-                    </div>
 
-                    <CardList robots={filteredRobots} />
+    if (!robots.length) {
+        return <h1>Loading...</h1>
+    }
+    else {
+        return (
+            <div className='tc'>
+                <h1 className={theme}>{title}</h1>
+                <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+                    <AddRobot mode={mode} addChange={onAddChange} addBot={addRobot} />
+                    <SearchBox mode={mode} searchChange={onSearchChange} modeChange={modeChange} />
                 </div>
-            );
-        }
 
+                <CardList mode={mode} robots={filteredRobots} />
+            </div>
+        );
     }
+
+
 };
 
 export default App;

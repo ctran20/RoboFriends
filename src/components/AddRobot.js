@@ -1,6 +1,16 @@
 import React from 'react';
 
-const AddRobot = ({ addChange, addBot }) => {
+const AddRobot = ({ addChange, addBot, mode }) => {
+    let theme = '';
+    let name = '';
+
+    if (mode === 'set_set2/') {
+        theme = 'pa3 ba b--blue bg-yellow grow';
+        name = 'Add Alien';
+    } else {
+        theme = 'pa3 ba b--blue bg-light-green grow';
+        name = 'Add Robot';
+    }
     return (
         <div>
             <input
@@ -12,10 +22,10 @@ const AddRobot = ({ addChange, addBot }) => {
                 maxLength="20"
             />
             <button
-                className='pa3 ba b--blue bg-light-green grow'
+                className={theme}
                 type='submit'
                 onClick={addBot}
-            >Add Robot</button>
+            >{name}</button>
         </div>
     );
 }
