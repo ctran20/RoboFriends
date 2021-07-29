@@ -14,6 +14,7 @@ const AddRobot = ({ addChange, addBot, mode }) => {
     return (
         <div>
             <input
+                type='text'
                 className='pa3 ba b--blue bg-lightest-blue'
                 placeholder='Name'
                 onChange={addChange}

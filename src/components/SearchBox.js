@@ -14,7 +14,7 @@ const SearchBox = ({ searchChange, modeChange, mode }) => {
         <div>
             <input
                 className={'pa3 ba b--green bg-lightest-blue'}
-                type='search'
+                type='tex'
                 placeholder={name}
                 onChange={searchChange}
                 maxLength="20"

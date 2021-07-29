@@ -59,7 +59,7 @@ function App() {
         return (
             <div className='tc'>
                 <h1 className={theme}>{title}</h1>
-                <div className='mb3' style={{ display: 'flex', justifyContent: 'space-evenly', flexWrap: 'true' }}>
+                <div className='mb3' style={{ display: 'flex', justifyContent: 'space-evenly' }}>
                     <AddRobot mode={mode} addChange={onAddChange} addBot={addRobot} />
                     <SearchBox mode={mode} searchChange={onSearchChange} modeChange={modeChange} />
                 </div>
