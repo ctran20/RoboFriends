@@ -5,7 +5,7 @@ export const robotsData = [
     },
     {
         name: 'Bender Rodriguez',
-        email: 'benderbending@ssr.com'
+        email: 'bender@offender.com'
     },
     {
         name: 'R2D2',
