@@ -3,6 +3,7 @@ A web apllication developed with React/JavaScript that generate a robot based on
 
 - Try adding your name or a celebrity's name and see what you would look like as a robot.
 - The search box allows you to filter the robots by name. Try adding your family in and filter by last name to see if the robots have anything in common.
+- Switch mode button will let you switch over to AlienFriends.
 
 <img src="git-imgs/screen.gif" width="600" />
 
