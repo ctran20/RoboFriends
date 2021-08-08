@@ -25,7 +25,7 @@ function App() {
   const robots = robotsData;
   const [mode, setMode] = useState('');
   const [title, setTitle] = useState('RoboFriends');
-  const styles = 'f-med pointer lh-title grow';
+  const styles = 'pointer lh-title grow';
   const [theme, setTheme] = useState(styles + ' light-green');
 
   const onAddChange = (event) => {
@@ -90,7 +90,12 @@ function App() {
     return (
       <div className="tc">
         <div className="titleFrame">
-          <h1 className={theme}>{title}</h1>
+          <h1
+            style={width <= 760 ? { fontSize: '3rem' } : { fontSize: '5rem' }}
+            className={theme}
+          >
+            {title}
+          </h1>
         </div>
         <div
           className="ma4"

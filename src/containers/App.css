@@ -15,10 +15,6 @@ h1:hover {
   animation-duration: 3s;
 }
 
-.f-med {
-  font-size: 4rem;
-}
-
 .titleFrame {
   animation-name: fadeIn;
   animation-duration: 1s;
