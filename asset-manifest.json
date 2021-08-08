@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/RoboFriends/static/css/main.1d67ee7f.chunk.css",
-    "main.js": "/RoboFriends/static/js/main.0e806374.chunk.js",
-    "main.js.map": "/RoboFriends/static/js/main.0e806374.chunk.js.map",
+    "main.css": "/RoboFriends/static/css/main.da747f12.chunk.css",
+    "main.js": "/RoboFriends/static/js/main.7aa53b15.chunk.js",
+    "main.js.map": "/RoboFriends/static/js/main.7aa53b15.chunk.js.map",
     "runtime-main.js": "/RoboFriends/static/js/runtime-main.6cf3b1b7.js",
     "runtime-main.js.map": "/RoboFriends/static/js/runtime-main.6cf3b1b7.js.map",
     "static/css/2.6d7c7915.chunk.css": "/RoboFriends/static/css/2.6d7c7915.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.31798ac4.chunk.js.map": "/RoboFriends/static/js/3.31798ac4.chunk.js.map",
     "index.html": "/RoboFriends/index.html",
     "static/css/2.6d7c7915.chunk.css.map": "/RoboFriends/static/css/2.6d7c7915.chunk.css.map",
-    "static/css/main.1d67ee7f.chunk.css.map": "/RoboFriends/static/css/main.1d67ee7f.chunk.css.map",
+    "static/css/main.da747f12.chunk.css.map": "/RoboFriends/static/css/main.da747f12.chunk.css.map",
     "static/js/2.f81808f9.chunk.js.LICENSE.txt": "/RoboFriends/static/js/2.f81808f9.chunk.js.LICENSE.txt",
     "static/media/App.css": "/RoboFriends/static/media/Monofett.4f2f0211.woff"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.6cf3b1b7.js",
     "static/css/2.6d7c7915.chunk.css",
     "static/js/2.f81808f9.chunk.js",
-    "static/css/main.1d67ee7f.chunk.css",
-    "static/js/main.0e806374.chunk.js"
+    "static/css/main.da747f12.chunk.css",
+    "static/js/main.7aa53b15.chunk.js"
   ]
 }
