@@ -98,19 +98,8 @@ function App() {
           </h1>
         </div>
         <div
-          className="ma4"
-          style={
-            width <= 760
-              ? {
-                  display: 'flex',
-                  justifyContent: 'space-evenly',
-                  flexDirection: 'column',
-                }
-              : {
-                  display: 'flex',
-                  justifyContent: 'space-evenly',
-                }
-          }
+          className="ma4 buttonLayout"
+          style={width <= 780 ? { flexDirection: 'column' } : {}}
         >
           <AddRobot mode={mode} addChange={onAddChange} addBot={addRobot} />
           <SearchBox

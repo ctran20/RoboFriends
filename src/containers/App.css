@@ -15,12 +15,12 @@ h1:hover {
   animation-duration: 3s;
 }
 
-.titleFrame {
-  animation-name: fadeIn;
-  animation-duration: 1s;
+.buttonLayout {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.card {
+.titleFrame {
   animation-name: fadeIn;
   animation-duration: 1s;
 }

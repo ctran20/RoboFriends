@@ -15,7 +15,7 @@ const SearchBox = ({ searchChange, modeChange, mode }) => {
       <input
         style={{ width: 200 }}
         type="text"
-        className={'pa3 ba b--green bg-lightest-blue'}
+        className={'pa3 ba b--blue bg-lightest-blue'}
         placeholder={name}
         onChange={searchChange}
         maxLength="20"
