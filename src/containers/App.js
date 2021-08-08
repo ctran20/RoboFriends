@@ -3,9 +3,9 @@ import CardList from '../components/CardList';
 import AddRobot from '../components/AddRobot';
 import SearchBox from '../components/SearchBox';
 import { robotsData } from '../robots';
-import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSearchField } from '../actions';
+import './App.css';
 
 function App() {
   const dispatch = useDispatch();
@@ -15,7 +15,8 @@ function App() {
   const [newBot, setNewBot] = useState('');
   const [mode, setMode] = useState('');
   const [title, setTitle] = useState('RoboFriends');
-  const [theme, setTheme] = useState('f-subheadline lh-title light-green grow');
+  const styles = 'f-subheadline pointer lh-title grow';
+  const [theme, setTheme] = useState(styles + ' light-green');
 
   const onAddChange = (event) => {
     setNewBot(event.target.value);
@@ -30,11 +31,11 @@ function App() {
     if (title === 'RoboFriends') {
       setMode('set_set2/');
       setTitle('AlienFriends');
-      setTheme('f-subheadline lh-title yellow grow');
+      setTheme(styles + ' yellow');
     } else {
       setMode('');
       setTitle('RoboFriends');
-      setTheme('f-subheadline lh-title light-green grow');
+      setTheme(styles + ' light-green');
     }
   };
 
@@ -58,7 +59,9 @@ function App() {
   } else {
     return (
       <div className="tc">
-        <h1 className={theme}>{title}</h1>
+        <div className="titleFrame">
+          <h1 className={theme}>{title}</h1>
+        </div>
         <div
           className="mb3"
           style={{ display: 'flex', justifyContent: 'space-evenly' }}

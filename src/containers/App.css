@@ -11,19 +11,35 @@ h1 {
 }
 
 h1:hover {
-  animation-name: example;
-  animation-duration: 4s;
+  animation-name: chroma;
+  animation-duration: 3s;
 }
 
-@keyframes example {
-  10% {
-    color: red;
+.titleFrame {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+.card {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
   }
-  30% {
-    color: yellow;
+}
+
+@keyframes chroma {
+  20% {
+    color: rgb(246, 44, 44);
+  }
+  40% {
+    color: rgb(255, 255, 126);
   }
   60% {
-    color: blue;
+    color: rgb(68, 68, 248);
   }
   80% {
     color: white;
