@@ -25,7 +25,7 @@ function App() {
   const robots = robotsData;
   const [mode, setMode] = useState('');
   const [title, setTitle] = useState('RoboFriends');
-  const styles = 'f-subheadline pointer lh-title grow';
+  const styles = 'f-med pointer lh-title grow';
   const [theme, setTheme] = useState(styles + ' light-green');
 
   const onAddChange = (event) => {
@@ -93,7 +93,7 @@ function App() {
           <h1 className={theme}>{title}</h1>
         </div>
         <div
-          className="mb3"
+          className="ma4"
           style={
             width <= 760
               ? {
