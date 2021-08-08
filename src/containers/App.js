@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CardList from '../components/CardList';
 import AddRobot from '../components/AddRobot';
 import SearchBox from '../components/SearchBox';
@@ -14,6 +14,7 @@ import './App.css';
 
 function App() {
   const dispatch = useDispatch();
+  const [width, setWidth] = useState(window.innerWidth);
   const { searchField } = useSelector((state) => state.searchRobots);
   const { newBot, inputBox } = useSelector((state) => state.addChange);
   /* For Fetching
@@ -73,6 +74,15 @@ function App() {
     return robot.name.toLowerCase().includes(searchField.toLowerCase());
   });
 
+  //Adjust Screen Layout
+  useEffect(() => {
+    const handleResizeWindow = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResizeWindow);
+    return () => {
+      window.removeEventListener('resize', handleResizeWindow);
+    };
+  }, []);
+
   if (!robots.length /*isPending if fetching*/) {
     return <h1>Loading...</h1>;
     //if(!error) if fetching
@@ -84,7 +94,18 @@ function App() {
         </div>
         <div
           className="mb3"
-          style={{ display: 'flex', justifyContent: 'space-evenly' }}
+          style={
+            width <= 760
+              ? {
+                  display: 'flex',
+                  justifyContent: 'space-evenly',
+                  flexDirection: 'column',
+                }
+              : {
+                  display: 'flex',
+                  justifyContent: 'space-evenly',
+                }
+          }
         >
           <AddRobot mode={mode} addChange={onAddChange} addBot={addRobot} />
           <SearchBox
