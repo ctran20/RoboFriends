@@ -15,7 +15,7 @@ function App() {
   const [newBot, setNewBot] = useState('');
   const [mode, setMode] = useState('');
   const [title, setTitle] = useState('RoboFriends');
-  const [theme, setTheme] = useState('f-subheadline lh-title');
+  const [theme, setTheme] = useState('f-subheadline lh-title light-green grow');
 
   const onAddChange = (event) => {
     setNewBot(event.target.value);
@@ -30,11 +30,11 @@ function App() {
     if (title === 'RoboFriends') {
       setMode('set_set2/');
       setTitle('AlienFriends');
-      setTheme('f-subheadline lh-title yellow');
+      setTheme('f-subheadline lh-title yellow grow');
     } else {
       setMode('');
       setTitle('RoboFriends');
-      setTheme('f-subheadline lh-title light-green');
+      setTheme('f-subheadline lh-title light-green grow');
     }
   };
 

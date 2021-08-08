@@ -1,13 +1,31 @@
 @font-face {
-    font-family: 'Monofett Regular';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Monofett Regular'), url('Monofett.woff') format('woff');
-    }
-    
+  font-family: 'Monofett Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Monofett Regular'), url('Monofett.woff') format('woff');
+}
 
-h1{
-    font-family: 'Monofett Regular';
-    font-weight: 200;
-    color: #9EEBCF;
+h1 {
+  font-family: 'Monofett Regular';
+  font-weight: 200;
+}
+
+h1:hover {
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  10% {
+    color: red;
+  }
+  30% {
+    color: yellow;
+  }
+  60% {
+    color: blue;
+  }
+  80% {
+    color: white;
+  }
 }
