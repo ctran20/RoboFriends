@@ -4,28 +4,46 @@ import AddRobot from '../components/AddRobot';
 import SearchBox from '../components/SearchBox';
 import { robotsData } from '../robots';
 import { useDispatch, useSelector } from 'react-redux';
-import { setSearchField } from '../actions';
+import {
+  setSearchField,
+  setAddChange,
+  refreshSearchField,
+  resetAddChange,
+} from '../redux/actions';
 import './App.css';
 
 function App() {
   const dispatch = useDispatch();
-  const { searchField } = useSelector((state) => state);
-  const [inputBox, setInputBox] = useState({});
+  const { searchField } = useSelector((state) => state.searchRobots);
+  const { newBot, inputBox } = useSelector((state) => state.addChange);
+  /* For Fetching
+  const { robotz, isPending, error } = useSelector(
+    (state) => state.requestRobots
+  );*/
+
   const robots = robotsData;
-  const [newBot, setNewBot] = useState('');
   const [mode, setMode] = useState('');
   const [title, setTitle] = useState('RoboFriends');
   const styles = 'f-subheadline pointer lh-title grow';
   const [theme, setTheme] = useState(styles + ' light-green');
 
   const onAddChange = (event) => {
-    setNewBot(event.target.value);
-    setInputBox(event);
+    dispatch(setAddChange(event));
   };
 
   const onSearchChange = (event) => {
     dispatch(setSearchField(event.target.value));
   };
+
+  /* For fetching robots json from url
+  const onRequestRobots = () => {
+    dispatch(requestRobots());
+  };
+
+  useEffect(() => {
+    onRequestRobots();
+  }, []);
+  */
 
   const modeChange = () => {
     if (title === 'RoboFriends') {
@@ -40,22 +58,24 @@ function App() {
   };
 
   const addRobot = () => {
-    if (newBot !== '') {
+    if (newBot.replace(/\s/g, '') !== '') {
       robots.unshift({
         name: newBot,
         email: newBot.replace(/\s/g, '').toLowerCase() + '@robot.com',
       });
-      setNewBot('');
       inputBox.target.value = '';
     }
+    dispatch(refreshSearchField());
+    dispatch(resetAddChange());
   };
 
   const filteredRobots = robots.filter((robot) => {
     return robot.name.toLowerCase().includes(searchField.toLowerCase());
   });
 
-  if (!robots.length) {
+  if (!robots.length /*isPending if fetching*/) {
     return <h1>Loading...</h1>;
+    //if(!error) if fetching
   } else {
     return (
       <div className="tc">
@@ -73,7 +93,6 @@ function App() {
             modeChange={modeChange}
           />
         </div>
-
         <CardList mode={mode} robots={filteredRobots} />
       </div>
     );
