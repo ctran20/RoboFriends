@@ -33,4 +33,4 @@ const AddRobot = ({ addChange, addBot, mode }) => {
   );
 };
 
-export default AddRobot;
+export default React.memo(AddRobot);

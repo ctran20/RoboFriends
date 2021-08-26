@@ -32,4 +32,4 @@ const SearchBox = ({ searchChange, modeChange, mode }) => {
   );
 };
 
-export default SearchBox;
+export default React.memo(SearchBox);

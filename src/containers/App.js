@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CardList from '../components/CardList';
 import AddRobot from '../components/AddRobot';
 import SearchBox from '../components/SearchBox';
+import Header from '../components/Header';
 import { robotsData } from '../robots';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -90,12 +91,7 @@ function App() {
     return (
       <div className="tc">
         <div className="titleFrame">
-          <h1
-            style={width <= 760 ? { fontSize: '3rem' } : { fontSize: '5rem' }}
-            className={theme}
-          >
-            {title}
-          </h1>
+          <Header theme={theme} title={title} width={width} />
         </div>
         <div
           className="ma4 buttonLayout"

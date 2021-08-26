@@ -12,4 +12,4 @@ const CardList = (props) => {
   return <div>{cardComponent}</div>;
 };
 
-export default CardList;
+export default React.memo(CardList);
