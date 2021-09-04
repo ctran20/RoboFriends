@@ -13,6 +13,7 @@ const SearchBox = ({ searchChange, modeChange, mode }) => {
   return (
     <div className="ma1">
       <input
+        aria-label="Search Robot"
         style={{ width: 200 }}
         type="text"
         className={'pa3 ba b--blue bg-lightest-blue'}

@@ -1,7 +1,7 @@
 {
   "name": "robofriends",
   "homepage": "https://ctran20.github.io/RoboFriends",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",

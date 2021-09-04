@@ -5,7 +5,7 @@ export const robotsData = [
   },
   {
     name: 'Roomba',
-    email: 'carforpet@irobot.com',
+    email: 'carpet@irobot.com',
   },
   {
     name: 'R2D2',
@@ -13,10 +13,10 @@ export const robotsData = [
   },
   {
     name: 'HAL 9000',
-    email: 'podbaydoor@dave.com',
+    email: 'dave@podbaydoor.com',
   },
   {
-    name: 'Glados',
+    name: 'GLaDOS',
     email: 'portal@cake.com',
   },
   {
